@@ -16,9 +16,9 @@
 - git [--namespace=<name>]
 - git [--super-prefix=<path>]
 - git [--config-env=<name>=<envvar>]
-           <command> [<args>]
+           <command> <args>
 
-### 🧾 git [<command>] [<args>] 구조 요약
+### 🧾 git <command> <args> 구조 요약
 
 - `<command>`: 실행할 Git 명령어 (예: `add`, `commit`, `clone`)
 - `<args>`: 해당 명령어에 전달할 **인자(옵션/대상)**
