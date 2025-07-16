@@ -49,3 +49,14 @@ git init
 | (8) | Git 저장소 생성할 디렉토리로 이동 | `cd ~/Desktop/git` *(예시 경로)* |
 | (9) | Git 저장소 초기화 | `git init` |
 
+
+## ✅ Git 실습용 디렉토리 생성 및 초기화 명령어 정리
+
+| 단계 | 설명 | 명령어 |
+|------|------|--------|
+| 1 | 바탕화면에 git_practice 폴더 생성 (중간 폴더 없을 경우 자동 생성) | `mkdir -p ~/Desktop/git_practice` |
+| 2 | 해당 폴더로 이동 | `cd ~/Desktop/git_practice` |
+| 3 | app.py 파일 생성 | `touch app.py` |
+| 4 | Git 저장소 초기화 (버전관리 시작) | `git init` |
+
+
