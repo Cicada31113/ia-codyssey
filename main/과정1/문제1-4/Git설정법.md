@@ -35,30 +35,31 @@ git init
 
 -----------------------------정리-------------------
 
--Git 설치 확인 (이미 설치되어 있다면 생략)
+- (1)Git 설치 확인 (이미 설치되어 있다면 생략)
 git --version
 
--개행문자 설정 (macOS/Linux는 input)
+- (2)개행문자 설정 (macOS/Linux는 input)
 git config --global core.autocrlf input
 
--사용자 이름/이메일 설정
+- (3)사용자 이름/이메일 설정
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 
--기본 브랜치명을 main으로 설정
+- (4)기본 브랜치명을 main으로 설정
 git config --global init.defaultBranch main
 
--VSCode를 Git의 기본 에디터로 설정
+- (5)VSCode를 Git의 기본 에디터로 설정
 git config --global core.editor "code --wait"
 
--현재 Git 전역 설정 확인
+- (6)현재 Git 전역 설정 확인 
 git config --global --list
 
--설정파일을 VSCode로 열기
+- (7)설정파일을 VSCode로 열기
 code ~/.gitconfig
+이 경우 리눅스 환경에서 명령어가 작동안할경우, VScode 에서 새파일열기 -> crtl+H 눌러서 숨긴파일 활성화하고 Home에서 .gitconfig 클릭후 열기
 
--Git 저장소 생성할 디렉토리로 이동
+- (8)Git 저장소 생성할 디렉토리로 이동
 cd ~/Desktop/git  # 예시 경로
 
--Git 저장소 초기화
+- (9)Git 저장소 초기화
 git init
