@@ -35,31 +35,17 @@ git init
 
 -----------------------------정리-------------------
 
-- (1)Git 설치 확인 (이미 설치되어 있다면 생략)
-git --version
+## ✅ Git 기초 환경 설정 (Linux/macOS 기준)
 
-- (2)개행문자 설정 (macOS/Linux는 input)
-git config --global core.autocrlf input
+| 단계 | 설명 | 명령어 / 방법 |
+|------|------|----------------|
+| (1) | Git 설치 확인 (이미 설치되어 있다면 생략) | `git --version` |
+| (2) | 개행문자 설정 (macOS/Linux는 input) | `git config --global core.autocrlf input` |
+| (3) | 사용자 이름/이메일 설정 | `git config --global user.name "Your Name"`<br>`git config --global user.email "your.email@example.com"` |
+| (4) | 기본 브랜치명을 main으로 설정 | `git config --global init.defaultBranch main` |
+| (5) | VSCode를 Git의 기본 에디터로 설정 | `git config --global core.editor "code --wait"` |
+| (6) | 현재 Git 전역 설정 확인 | `git config --global --list` |
+| (7) | 설정파일을 VSCode로 열기 | `code ~/.gitconfig`<br>※ 만약 위 명령어가 작동하지 않으면:<br>① VSCode 실행 → 새 파일 열기<br>② `Ctrl + H`로 숨김 파일 보기 활성화<br>③ 홈 디렉토리에서 `.gitconfig` 클릭 |
+| (8) | Git 저장소 생성할 디렉토리로 이동 | `cd ~/Desktop/git` *(예시 경로)* |
+| (9) | Git 저장소 초기화 | `git init` |
 
-- (3)사용자 이름/이메일 설정
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-
-- (4)기본 브랜치명을 main으로 설정
-git config --global init.defaultBranch main
-
-- (5)VSCode를 Git의 기본 에디터로 설정
-git config --global core.editor "code --wait"
-
-- (6)현재 Git 전역 설정 확인 
-git config --global --list
-
-- (7)설정파일을 VSCode로 열기
-code ~/.gitconfig
-이 경우 리눅스 환경에서 명령어가 작동안할경우, VScode 에서 새파일열기 -> crtl+H 눌러서 숨긴파일 활성화하고 Home에서 .gitconfig 클릭후 열기
-
-- (8)Git 저장소 생성할 디렉토리로 이동
-cd ~/Desktop/git  # 예시 경로
-
-- (9)Git 저장소 초기화
-git init
