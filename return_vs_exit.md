@@ -73,4 +73,4 @@ Start
 - `return`은 함수만 종료 — 조용하고 안전
 - `exit()`은 전체 프로그램 종료 — 강력하지만 신중히 사용해야 함
 
-xxxxx
+xxxxx xx
