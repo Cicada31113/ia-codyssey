@@ -16,7 +16,7 @@ def divide(a, b):
 def evaluate_flat_expression(tokens):
     try:
         # 숫자 자리 확인 및 변환
-        for i in range(0, len(tokens), 2):
+        for i in range(0, len(tokens), 2):    # 짝수 인덱스만 순회하게 만들어주는 코드
             tokens[i] = float(tokens[i])
 
         # 1️⃣ 곱셈/나눗셈 처리
