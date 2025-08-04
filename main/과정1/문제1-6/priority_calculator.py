@@ -45,38 +45,44 @@ def evaluate_with_parentheses(tokens):
 # ✅ 괄호가 없는 평탄한 수식 계산
 def evaluate_flat_expression(tokens):
     try:
-        for i in range(0, len(tokens), 2):
-            tokens[i] = float(tokens[i])
-
-        # 곱셈/나눗셈 먼저 처리
-        i = 1
-        while i < len(tokens) - 1:
-            if tokens[i] == '*':
-                result = multiply(tokens[i - 1], float(tokens[i + 1]))
-                tokens[i - 1:i + 2] = [result]
-            elif tokens[i] == '/':
-                result = divide(tokens[i - 1], float(tokens[i + 1]))
-                tokens[i - 1:i + 2] = [result]
+        # 곱/나눗셈 먼저 처리
+        new_tokens = []
+        i = 0
+        while i < len(tokens):
+            if tokens[i] in ['*', '/']:
+                prev = float(new_tokens.pop())
+                op = tokens[i]
+                next_num = float(tokens[i + 1])
+                if op == '*':
+                    new_tokens.append(multiply(prev, next_num))
+                else:
+                    new_tokens.append(divide(prev, next_num))
+                i += 2  # 연산자와 피연산자 skip
             else:
-                i += 2
+                new_tokens.append(tokens[i])
+                i += 1
 
-        # 덧셈/뺄셈 처리
-        result = tokens[0]
-        for i in range(1, len(tokens), 2):
-            op = tokens[i]
-            num = float(tokens[i + 1])
+        # 덧/뺄셈 처리
+        result = float(new_tokens[0])
+        i = 1
+        while i < len(new_tokens):
+            op = new_tokens[i]
+            num = float(new_tokens[i + 1])
             if op == '+':
                 result = add(result, num)
             elif op == '-':
                 result = subtract(result, num)
             else:
-                return "Invalid input."
+                return "Invalid input"
+            i += 2
+
         return result
 
     except ZeroDivisionError as zde:
         return str(zde)
-    except:
-        return "Invalid input."
+    except Exception:
+        return "Invalid input"
+
 
 # ✅ 메인 실행부
 def main():
